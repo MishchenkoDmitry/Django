@@ -1,3 +1,7 @@
 .test-class {
     color: aqua;
 }
+
+.active {
+    background-color: red;
+}
