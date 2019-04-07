@@ -7,6 +7,12 @@
 {% block content %}
     {% include 'mainapp/includes/inc_menu.html' %}
     <ul>
+        {% for category in categorys %}
+            <li>{{ category.name }}</li>
+        {% endfor %}
+        
+    </ul>
+    <ul>
         {% for product in products %}
             <li>{{ product.name}} ({{ product.category }})</li>
         {% endfor %}
