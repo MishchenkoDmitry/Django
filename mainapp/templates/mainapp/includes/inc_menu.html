@@ -6,7 +6,7 @@
     <li><a class="{% if request.resolver_match.url_name == 'products' %}
                         active
                       {% endif %}"
-            href="{% url 'products' %}">Товары</a></li>
+            href="{% url 'products:index' %}">Товары</a></li>
     <li><a class="{% if request.resolver_match.url_name == 'contacts' %}
                         active
                       {% endif %}"
