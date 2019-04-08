@@ -22,6 +22,7 @@ import mainapp.views as mainapp
 
 urlpatterns = [
     url(r'^$', mainapp.main, name='index'),
+    url(r'^auth/', include('authapp.urls', namespace='auth')),
     url(r'^products/', include('mainapp.urls', namespace='products')),
     url(r'^contacts/', mainapp.contacts, name='contacts'),
     url(r'^admin/', admin.site.urls),

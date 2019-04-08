@@ -8,15 +8,18 @@
     {% include 'mainapp/includes/inc_menu.html' %}
     <ul>
         {% for category in categorys %}
-            <li>{{ category.name }}</li>
+            <li>{{ category.name }}</li
+                {% for product in products %}
+                    <ul>
+                        {% if product.category.id == category.id %}
+                            <li>{{ product.name}} ({{ product.category }})</li>
+                        {% endif %}
+                    </ul>
+
+                {% endfor %}
         {% endfor %}
         
     </ul>
-    <ul>
-        {% for product in products %}
-            <li>{{ product.name}} ({{ product.category }})</li>
-        {% endfor %}
 
-    </ul>
     <h1>Главная</h1>
 {% endblock %}
