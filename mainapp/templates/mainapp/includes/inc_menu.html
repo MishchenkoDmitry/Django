@@ -1,14 +1,18 @@
-<ul class="menu">
-    <li><a class="{% if request.resolver_match.view_name == 'index' %}
-                        active
-                      {% endif %}"
-            href="{% url 'index' %}">Домой</a></li>
-    <li><a class="{% if request.resolver_match.namespace == 'products' %}
-                        active
-                      {% endif %}"
-            href="{% url 'products:index' %}">Товары</a></li>
-    <li><a class="{% if request.resolver_match.view_name == 'contacts' %}
-                        active
-                      {% endif %}"
-            href="{% url 'contacts' %}">Контакты</a></li>
-</ul>
+<div class="menu">
+    <a class="{% if request.resolver_match.url_name == 'main' %}
+    menu-item active
+    {% else %}
+    menu-item
+    {% endif %}" href="{% url 'main' %}">домой</a>
+    <a class="{% if request.resolver_match.url_name == 'products' %}
+    menu-item active
+    {% else %}
+    menu-item
+    {% endif %}" href="{% url 'products:index' %}">продукты</a>
+    <a class="{% if request.resolver_match.url_name == 'contacts' %}
+    menu-item active
+    {% else %}
+    menu-item
+    {% endif %}" href="{% url 'contacts' %}">контакты</a>
+    <div>{{ basket|length }}</div>
+</div>
