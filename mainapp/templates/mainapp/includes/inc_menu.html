@@ -14,5 +14,18 @@
     {% else %}
     menu-item
     {% endif %}" href="{% url 'contacts' %}">контакты</a>
-    <div>{{ basket|length }}</div>
+
+    <a href="{% url 'basket:view' %}" class="basket">
+        <span>
+            {% if basket %}
+                {{ basket.0.total_cost|floatformat:0}} руб
+                ({{ basket.0.total_quantity }} шт)
+            {% endif %}
+        </span>
+    </a>
+{#    {% if user.is_superuser %}#}
+{#    #    <li>#}
+{#    #        <a href="{% url 'admin_custom.user' %}">Админка</a>#}
+{#    #    </li>#}
+{#    #{% endif %}#}
 </div>
